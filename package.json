@@ -1,0 +1,62 @@
+{
+  "name": "pastore-cli",
+  "version": "0.0.7",
+  "description": "Keep your passwords safe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amovah/pastore-cli.git"
+  },
+  "bin": {
+    "pastore": "bin/pastore"
+  },
+  "keywords": [
+    "passwords",
+    "store",
+    "save",
+    "keep",
+    "safe",
+    "manager",
+    "es7",
+    "es6",
+    "gulp",
+    "pass",
+    "keep"
+  ],
+  "author": "Ali Movahedi <ali_movahedi@aol.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amovah/pastore-cli/issues"
+  },
+  "homepage": "https://github.com/amovah/pastore-cli#readme",
+  "files": [
+    "build",
+    "bin"
+  ],
+  "directories": {
+    "lib": "src",
+    "bin": "bin"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-latest": "^6.16.0",
+    "eslint": "^3.11.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-rimraf": "^0.2.1"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "pastore": "^0.2.5"
+  }
+}
