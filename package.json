@@ -1,10 +1,10 @@
 {
   "name": "pastore-cli",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Keep your passwords safe",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "createPackage": "sh createPackage"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+current=$PWD
+
+rm -rf $HOME/.pastore
+mkdir $HOME/.pastore
+cp -r ./* $HOME/.pastore
+cd $HOME/.pastore
+npm i --production
+
+cd $current
+
+echo "You will need to set up the PATH environment variable in your terminal to have access to pastore-cli's binaries globally."
+echo "Add below line to your profile (this may be in your .profile, .bashrc, .zshrc, etc.)"
+echo "export PATH=\"\$PATH:\$HOME/.pastore/bin\""
