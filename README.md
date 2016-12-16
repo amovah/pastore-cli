@@ -16,7 +16,7 @@ Base on [pastore](https://github.com/amovah/pastore) module.
 
 4. You will need to set up the PATH environment variable in your terminal to have access to pastore-cli's binaries globally.
 
-  Add `export PATH="$PATH:$HOME/.pastore/bin"` to your profile (this may be in your .profile, .bashrc, .zshrc, etc.)
+  Add `export PATH="$PATH:$HOME/.pastore-cli/bin"` to your profile (this may be in your .profile, .bashrc, .zshrc, etc.)
 
 In this method, you don't need sudo to run commands.
 

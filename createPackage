@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-rm -rf pastore pastore.tar.gz
-mkdir pastore
+rm -rf pastore-cli pastore-cli.tar.gz
+mkdir pastore-cli
 gulp prod
-cp -r build bin package.json install pastore
-chmod 700 pastore/install
-tar -zcf pastore.tar.gz pastore/*
-rm -rf pastore
+cp -r build bin package.json install pastore-cli
+chmod 700 pastore-cli/install
+tar -zcf pastore-cli.tar.gz pastore-cli/*
+rm -rf pastore-cli
