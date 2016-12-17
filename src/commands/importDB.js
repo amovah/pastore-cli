@@ -7,7 +7,6 @@ export default (path, password) => {
   ui.writeInLine('Enter master password: ');
 
   ui.listen(masterPass => {
-    masterPass = masterPass.trim();
     pastore.load(masterPass).then(status => {
       if (!status) {
         console.log(chalk.red('password is incorrect'));
@@ -19,7 +18,7 @@ export default (path, password) => {
             process.exit();
           } else {
             pastore.importDB(db, password).then(() => {
-              console.log(chalk.green('Database is imported'));
+              console.log(chalk.green('database is imported'));
               process.exit();
             }).catch(() => {
               console.log(

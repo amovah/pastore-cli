@@ -6,7 +6,6 @@ export default () => {
   ui.writeInLine('Enter master password: ');
 
   ui.listen(masterPass => {
-    masterPass = masterPass.trim();
     pastore.load(masterPass).then(status => {
       if (!status) {
         console.log(chalk.red('password is incorrect'));

@@ -13,7 +13,9 @@ class UI {
   }
 
   listen(fn) {
-    this.input.addListener('data', fn);
+    this.input.addListener('data', data => {
+      fn(data.trim());
+    });
   }
 }
 

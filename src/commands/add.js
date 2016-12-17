@@ -6,7 +6,6 @@ export default (title, password, info) => {
   ui.writeInLine('Enter master password: ');
 
   ui.listen(masterPass => {
-    masterPass = masterPass.trim();
     pastore.load(masterPass).then(status => {
       if (!status) {
         console.log(chalk.red('password is incorrect'));
@@ -14,9 +13,9 @@ export default (title, password, info) => {
       } else {
         pastore.add(title, password, info).then(pass => {
           if (pass === false) {
-            console.log(chalk.red('Please choose another title'));
+            console.log(chalk.red('please choose another title'));
           } else {
-            console.log(chalk.green('Password has been added successfully'));
+            console.log(chalk.green('password has been added successfully'));
           }
           process.exit();
         });

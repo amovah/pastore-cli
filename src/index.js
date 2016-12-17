@@ -2,7 +2,7 @@ import app from 'commander';
 import commands from './commands';
 
 app
-  .command('init <password>')
+  .command('init')
   .description('initialize Pastore and set MasterPassword')
   .action(commands.init);
 
