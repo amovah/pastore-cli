@@ -1,8 +1,9 @@
 import pastore from 'pastore';
 import chalk from 'chalk';
 import ui from '../ui';
+import { writeFile as write } from 'fs';
 
-export default (title, password, info) => {
+export default path => {
   ui.writeInLine('Enter master password: ');
 
   ui.listen(masterPass => {
@@ -12,13 +13,14 @@ export default (title, password, info) => {
         console.log(chalk.red('password is incorrect'));
         process.exit();
       } else {
-        pastore.add(title, password, info).then(pass => {
-          if (pass === false) {
-            console.log(chalk.red('Please choose another title'));
+        write(path, pastore.exportDB(), err => {
+          if (err) {
+            console.log(err);
+            process.exit();
           } else {
-            console.log(chalk.green('Password has been added successfully'));
+            console.log(chalk.green('database has been exported'));
+            process.exit();
           }
-          process.exit();
         });
       }
     }).catch(() => {

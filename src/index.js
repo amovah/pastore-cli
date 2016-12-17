@@ -26,6 +26,16 @@ app
   .description('remove a password')
   .action(commands.remove);
 
+app
+  .command('export <path>')
+  .description('export database to a file')
+  .action(commands.exportDB);
+
+app
+  .command('import <path> <password>')
+  .description('import database from a file by database password')
+  .action(commands.importDB);
+
 app.version(require('../package.json').version);
 
 app.parse(process.argv);
