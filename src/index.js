@@ -7,7 +7,7 @@ app
   .action(commands.init);
 
 app
-  .command('add <title> <password> [info]')
+  .command('add <title> [password]')
   .description('add password')
   .action(commands.add);
 

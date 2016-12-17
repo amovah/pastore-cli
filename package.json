@@ -1,6 +1,6 @@
 {
   "name": "pastore-cli",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Keep your passwords safe",
   "main": "build/index.js",
   "scripts": {

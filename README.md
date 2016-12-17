@@ -9,11 +9,8 @@ Base on [pastore](https://github.com/amovah/pastore) module.
 ### Recommended Installation:
 
 1. Download latest version from [releases](https://github.com/amovah/pastore-cli/releases) page.
-
 2. Extract it somewhere.
-
 3. Enter directory and run `./install`.
-
 4. You will need to set up the PATH environment variable in your terminal to have access to pastore-cli's binaries globally.
 
   Add `export PATH="$PATH:$HOME/.pastore-cli/bin"` to your profile (this may be in your .profile, .bashrc, .zshrc, etc.)
