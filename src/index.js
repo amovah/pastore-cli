@@ -41,6 +41,11 @@ app
   .description('clear everything, you will have feresh pastore')
   .action(commands.clear);
 
+app
+  .command('changepass')
+  .description('change master password')
+  .action(commands.changepass);
+
 app.version(require('../package.json').version);
 
 app.parse(process.argv);
