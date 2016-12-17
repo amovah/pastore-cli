@@ -5,6 +5,7 @@ import show from './show';
 import remove from './remove';
 import exportDB from './exportDB';
 import importDB from './importDB';
+import clear from './clear';
 
 export default {
   init,
@@ -13,5 +14,6 @@ export default {
   show,
   remove,
   exportDB,
-  importDB
+  importDB,
+  clear
 };

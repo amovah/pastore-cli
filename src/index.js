@@ -36,6 +36,11 @@ app
   .description('import database from a file by database password')
   .action(commands.importDB);
 
+app
+  .command('clear')
+  .description('clear everything, you will have feresh pastore')
+  .action(commands.clear);
+
 app.version(require('../package.json').version);
 
 app.parse(process.argv);
