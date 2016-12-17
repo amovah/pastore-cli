@@ -12,10 +12,8 @@ export default () => {
         console.log(chalk.red('password is incorrect'));
         process.exit();
       } else {
-        for (let [index, pass] of pastore.findAll().entries()) {
-          console.log(chalk.cyan(index + 1 + '.'));
-          console.log(' ', chalk.magenta('id:'), pass.id);
-          console.log(' ', chalk.magenta('title:'), pass.title);
+        for (let [index, title] of pastore.findTitles().entries()) {
+          console.log(chalk.cyan(index + 1 + '.'), title);
         }
         process.exit();
       }

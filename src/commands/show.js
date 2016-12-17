@@ -2,7 +2,7 @@ import pastore from 'pastore';
 import chalk from 'chalk';
 import ui from '../ui';
 
-export default id => {
+export default title => {
   ui.writeInLine('Enter master password: ');
 
   ui.listen(masterPass => {
@@ -12,11 +12,10 @@ export default id => {
         console.log(chalk.red('password is incorrect'));
         process.exit();
       } else {
-        let pass = pastore.findById(id);
-        console.log(chalk.magenta('id:'), pass.id);
+        let pass = pastore.find(title);
         console.log(chalk.magenta('title:'), pass.title);
         console.log(chalk.magenta('password:'), pass.password);
-        console.log(chalk.magenta('more information:'), pass.moreInfo);
+        console.log(chalk.magenta('info:'), pass.info);
         process.exit();
       }
     }).catch(() => {

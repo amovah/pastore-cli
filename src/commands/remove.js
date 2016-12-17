@@ -2,7 +2,7 @@ import pastore from 'pastore';
 import chalk from 'chalk';
 import ui from '../ui';
 
-export default id => {
+export default title => {
   ui.writeInLine('Enter master password: ');
 
   ui.listen(masterPass => {
@@ -12,7 +12,7 @@ export default id => {
         console.log(chalk.red('password is incorrect'));
         process.exit();
       } else {
-        pastore.remove(id).then(() => {
+        pastore.remove(title).then(() => {
           console.log(chalk.green('password has been removed successfully'));
           process.exit();
         }).catch(() => {

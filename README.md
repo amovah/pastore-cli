@@ -28,6 +28,12 @@ In this method, you don't need sudo to run commands.
 
 In this method, maybe you need sudo to run commands.
 
+## Usage
+
+```
+pastore --help
+```
+
 # LICENSE
 
 MIT

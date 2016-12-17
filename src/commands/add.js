@@ -2,7 +2,8 @@ import pastore from 'pastore';
 import chalk from 'chalk';
 import ui from '../ui';
 
-export default (title, password, moreInfo) => {
+export default (title, password, info) => {
+  console.log(info);
   ui.writeInLine('Enter master password: ');
 
   ui.listen(masterPass => {
@@ -12,8 +13,12 @@ export default (title, password, moreInfo) => {
         console.log(chalk.red('password is incorrect'));
         process.exit();
       } else {
-        pastore.add(title, password, moreInfo).then(pass => {
-          console.log('Password id:', chalk.green(pass.id));
+        pastore.add(title, password, info).then(pass => {
+          if (pass === false) {
+            console.log(chalk.red('Please choose another title'));
+          } else {
+            console.log(chalk.green('Password has been added successfully'));
+          }
           process.exit();
         });
       }

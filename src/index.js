@@ -7,7 +7,7 @@ app
   .action(commands.init);
 
 app
-  .command('add <title> <password> [moreInfo]')
+  .command('add <title> <password> [info]')
   .description('add password')
   .action(commands.add);
 
@@ -17,19 +17,12 @@ app
   .action(commands.list);
 
 app
-  .command('show <id>')
+  .command('show <title>')
   .description('show a password')
   .action(commands.show);
 
 app
-  .command('find')
-  .option('-t, --title [name]', 'find by title')
-  .option('-p, --password [password]', 'find by password')
-  .description('find a password by title or password')
-  .action(commands.find);
-
-app
-  .command('remove <id>')
+  .command('remove <title>')
   .description('remove a password')
   .action(commands.remove);
 
