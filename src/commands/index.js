@@ -7,6 +7,7 @@ import exportDB from './exportDB';
 import importDB from './importDB';
 import clear from './clear';
 import changepass from './changepass';
+import update from './update';
 
 export default {
   init,
@@ -17,5 +18,6 @@ export default {
   exportDB,
   importDB,
   clear,
-  changepass
+  changepass,
+  update
 };

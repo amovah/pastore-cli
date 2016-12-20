@@ -2,9 +2,10 @@ import pastore from 'pastore';
 import chalk from 'chalk';
 import ui from '../ui';
 
-let oldPass = '';
 
 let gen = function* () {
+  let oldPass = '';
+  
   yield masterPass => {
     pastore.load(masterPass).then(status => {
       if (!status) {

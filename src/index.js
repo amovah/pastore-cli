@@ -46,6 +46,13 @@ app
   .description('change master password')
   .action(commands.changepass);
 
+app
+  .command('update <title>')
+  .description('update a password. password will be asked later.')
+  .option('-t, --title <title>', 'change title')
+  .option('-i, --info <info>', 'change information')
+  .action(commands.update);
+
 app.version(require('../package.json').version);
 
 app.parse(process.argv);

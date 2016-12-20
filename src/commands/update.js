@@ -3,8 +3,13 @@ import chalk from 'chalk';
 import ui from '../ui';
 
 
-let gen = function* (title, info) {
+let gen = function* (title, app) {
   let pass = '';
+  let update = {
+    password: '',
+    title: app.title || title,
+    info: app.info
+  };
 
   yield masterPass => {
     pastore.load(masterPass).then(status => {
@@ -13,11 +18,14 @@ let gen = function* (title, info) {
         process.exit();
       } else {
         pass = masterPass;
-        if (pastore.findTitles().includes(title)) {
+        if (app.title && pastore.findTitles().includes(app.title)) {
           console.log(chalk.red('please choose another title'));
           process.exit();
         } else {
-          ui.writeInLine(`Enter password for ${title}: `);
+          console.log(
+            chalk.bold('leave it blank, if you want dont change password')
+          );
+          ui.writeInLine(`Enter new password for ${update.title}: `);
         }
       }
     }).catch(() => {
@@ -28,8 +36,18 @@ let gen = function* (title, info) {
 
   yield password => {
     pastore.load(pass).then(() => {
-      pastore.add(title, password, info).then(() => {
-        console.log(chalk.green('password has been added successfully'));
+      if (!app.title) {
+        delete update.title;
+      }
+
+      if (password === '') {
+        delete update.password;
+      } else {
+        update.password = password;
+      }
+
+      pastore.update(title, update).then(() => {
+        console.log(chalk.green('password has been updated'));
         process.exit();
       });
     });
