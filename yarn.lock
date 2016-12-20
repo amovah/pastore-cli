@@ -1097,6 +1097,10 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
 
+fuse.js@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-2.6.1.tgz#d118e00f9a859f7b354ed4f7740214249e32a57a"
+
 gaze@^0.5.1:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/gaze/-/gaze-0.5.2.tgz#40b709537d24d1d45767db5a908689dfe69ac44f"

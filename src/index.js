@@ -52,6 +52,11 @@ app
   .option('-t, --title <title>', 'change title')
   .action(commands.update);
 
+app
+  .command('search <title>')
+  .description('search a password by title')
+  .action(commands.search);
+
 app.version(require('../package.json').version);
 
 app.parse(process.argv);

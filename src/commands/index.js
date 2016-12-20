@@ -8,6 +8,7 @@ import importDB from './importDB';
 import clear from './clear';
 import changepass from './changepass';
 import update from './update';
+import search from './search';
 
 export default {
   init,
@@ -19,5 +20,6 @@ export default {
   importDB,
   clear,
   changepass,
-  update
+  update,
+  search
 };
