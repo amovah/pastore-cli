@@ -1,6 +1,6 @@
 # pastore-cli
 
-You can keep your passwords safe, can't be worry about forget them.
+You can keep your passwords safe, no need to worry about losing them.
 
 Base on [pastore](https://github.com/amovah/pastore) module.
 
