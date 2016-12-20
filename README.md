@@ -17,6 +17,12 @@ Base on [pastore](https://github.com/amovah/pastore) module.
 
 In this method, you don't need sudo to run commands.
 
+### Install from Source
+
+1. `git clone https://github.com/amovah/pastore-cli.git`
+2. Enter directory and run `./createPackage`.
+3. Then follow 2 from Recommended Installation.
+
 ### Alternative Way (Using NPM):
 
 ```

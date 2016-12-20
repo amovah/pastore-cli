@@ -2,13 +2,12 @@ import pastore from 'pastore';
 import chalk from 'chalk';
 import ui from '../ui';
 
-
 let gen = function* (title, app) {
   let pass = '';
   let update = {
     password: '',
     title: app.title || title,
-    info: app.info
+    info: ''
   };
 
   yield masterPass => {
@@ -22,9 +21,7 @@ let gen = function* (title, app) {
           console.log(chalk.red('please choose another title'));
           process.exit();
         } else {
-          console.log(
-            chalk.bold('leave it blank, if you want dont change password')
-          );
+          console.log(chalk.bold('leave it blank, if you dont want change'));
           ui.writeInLine(`Enter new password for ${update.title}: `);
         }
       }
@@ -35,17 +32,28 @@ let gen = function* (title, app) {
   };
 
   yield password => {
+    if (password === '') {
+      delete update.password;
+    } else {
+      update.password = password;
+    }
+
+    console.log(chalk.bold('leave it blank, if you dont want change'));
+    ui.writeInLine(`Enter new information for ${update.title}: `);
+  };
+
+  yield info => {
+    if (!app.title) {
+      delete update.title;
+    }
+
+    if (info === '') {
+      delete update.info;
+    } else {
+      update.info = info;
+    }
+
     pastore.load(pass).then(() => {
-      if (!app.title) {
-        delete update.title;
-      }
-
-      if (password === '') {
-        delete update.password;
-      } else {
-        update.password = password;
-      }
-
       pastore.update(title, update).then(() => {
         console.log(chalk.green('password has been updated'));
         process.exit();
@@ -55,10 +63,10 @@ let gen = function* (title, app) {
 };
 
 
-export default (title, info) => {
+export default (title, app) => {
   ui.writeInLine('Enter master password: ');
 
-  let handler = gen(title, info);
+  let handler = gen(title, app);
   ui.listen(data => {
     handler.next().value(data);
   });

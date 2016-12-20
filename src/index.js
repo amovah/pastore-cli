@@ -7,7 +7,7 @@ app
   .action(commands.init);
 
 app
-  .command('add <title> [password]')
+  .command('add <title>')
   .description('add password')
   .action(commands.add);
 
@@ -50,7 +50,6 @@ app
   .command('update <title>')
   .description('update a password. password will be asked later.')
   .option('-t, --title <title>', 'change title')
-  .option('-i, --info <info>', 'change information')
   .action(commands.update);
 
 app.version(require('../package.json').version);

@@ -12,9 +12,13 @@ export default title => {
         process.exit();
       } else {
         let pass = pastore.find(title);
-        console.log(chalk.magenta('title:'), pass.title);
-        console.log(chalk.magenta('password:'), pass.password);
-        console.log(chalk.magenta('info:'), pass.info);
+        if (!pass) {
+          console.log(chalk.red('password not found'));
+        } else {
+          console.log(chalk.magenta('title:'), pass.title);
+          console.log(chalk.magenta('password:'), pass.password);
+          console.log(chalk.magenta('info:'), pass.info);
+        }
         process.exit();
       }
     }).catch(() => {

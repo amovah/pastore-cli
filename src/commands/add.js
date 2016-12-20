@@ -2,8 +2,8 @@ import pastore from 'pastore';
 import chalk from 'chalk';
 import ui from '../ui';
 
-
-let gen = function* (title, info) {
+let gen = function* (title) {
+  let pastorePass = '';
   let pass = '';
 
   yield masterPass => {
@@ -12,7 +12,7 @@ let gen = function* (title, info) {
         console.log(chalk.red('password is incorrect'));
         process.exit();
       } else {
-        pass = masterPass;
+        pastorePass = masterPass;
         if (pastore.findTitles().includes(title)) {
           console.log(chalk.red('please choose another title'));
           process.exit();
@@ -27,9 +27,15 @@ let gen = function* (title, info) {
   };
 
   yield password => {
-    pastore.load(pass).then(() => {
-      pastore.add(title, password, info).then(() => {
-        console.log(chalk.green('password has been added successfully'));
+    pass = password;
+    console.log('its optional');
+    ui.writeInLine(`Enter information for ${title}: `);
+  };
+
+  yield info => {
+    pastore.load(pastorePass).then(() => {
+      pastore.add(title, pass, info).then(() => {
+        console.log(chalk.green('password has been added'));
         process.exit();
       });
     });
@@ -37,10 +43,10 @@ let gen = function* (title, info) {
 };
 
 
-export default (title, info) => {
+export default title => {
   ui.writeInLine('Enter master password: ');
 
-  let handler = gen(title, info);
+  let handler = gen(title);
   ui.listen(data => {
     handler.next().value(data);
   });
