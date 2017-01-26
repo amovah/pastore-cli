@@ -5,8 +5,10 @@ export default ui => {
     exit: 'exit',
     add: 'add a password',
     remove: 'remove a password',
+    update: 'update a password',
     list: 'list passwords',
     show: 'show a password',
+    search: 'search a password',
     exportDB: 'export database to a file',
     importDB: 'import database from a file',
     clear: 'clear everthing'

@@ -1,5 +1,6 @@
 import { yellow } from 'chalk';
 import pastore from 'pastore';
+import { absVal } from '../utils';
 
 export default ui => {
   let data = {};
@@ -8,24 +9,25 @@ export default ui => {
   ui.write('title: ');
 
   ui.once(title => {
-    data.title = title;
+    data.title = absVal(title);
+
     ui.write('password: ');
   });
 
   ui.once(password => {
-    data.password = password;
+    data.password = absVal(password);
 
     ui.write('info: ');
   });
 
   ui.once(info => {
-    data.info = info;
+    data.info = absVal(info);
 
     ui.write('tag: ');
   });
 
   ui.once(tag => {
-    data.tag = tag;
+    data.tag = absVal(tag);
 
     pastore.add(
       data.title,

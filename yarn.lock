@@ -1978,9 +1978,9 @@ parse-passwd@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
 
-pastore@^0.4.5:
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/pastore/-/pastore-0.4.5.tgz#8471c53955ea40a4141a49845bd276939c9c4c16"
+pastore@^0.4.7:
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/pastore/-/pastore-0.4.7.tgz#9894b3859d1f423f188ab582e8b46d0359e296a6"
   dependencies:
     babel-runtime "^6.18.0"
     crypto-js "^3.1.7"
