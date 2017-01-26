@@ -9,7 +9,7 @@ Base on [pastore](https://github.com/amovah/pastore) module.
 ### Recommended Installation:
 
 1. Download latest version from [releases](https://github.com/amovah/pastore-cli/releases) page.
-2. Extract it somewhere.
+2. Extract `pastore-cli.tar.gz` somewhere.
 3. Enter directory and run `./install`.
 4. You will need to set up the PATH environment variable in your terminal to have access to pastore-cli's binaries globally.
 
@@ -20,8 +20,10 @@ In this method, you don't need sudo to run commands.
 ### Install from Source
 
 1. `git clone https://github.com/amovah/pastore-cli.git`
-2. Enter directory and run `./createPackage`.
-3. Then follow 2 from Recommended Installation.
+2. Open directory and install dependencies: `npm i`.
+3. Build app: `gulp prod`.
+4. run `./createPackage`.
+5. Then follow step 2 from Recommended Installation.
 
 ### Alternative Way (Using NPM):
 
@@ -34,7 +36,7 @@ In this method, maybe you need sudo to run commands.
 ## Usage
 
 ```
-pastore --help
+pastore
 ```
 
 # LICENSE
