@@ -1,6 +1,6 @@
 {
   "name": "pastore-cli",
-  "version": "0.4.2",
+  "version": "0.4.6",
   "description": "Keep your passwords safe",
   "main": "build/index.js",
   "scripts": {
@@ -60,6 +60,7 @@
     "pastore": "^0.4.7",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
-    "require-directory": "^2.1.1"
+    "require-directory": "^2.1.1",
+    "stringing": "^1.7.0"
   }
 }

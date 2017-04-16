@@ -9,6 +9,7 @@ export default ui => {
     list: 'list passwords',
     show: 'show a password',
     search: 'search a password',
+    generate: 'generate random passowrd',
     exportDB: 'export database to a file',
     importDB: 'import database from a file',
     clear: 'clear everthing'
